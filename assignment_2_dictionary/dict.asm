@@ -4,9 +4,11 @@ extern string_equals
 section .rodata
 
 section .text
-; rdi = address of a null terminated word name
-; rsi = address of the last word
-; returns: rax = 0 if not found, otherwise address
+; rdi = адрес слова
+; rsi = адрес последнего слова
+; returns: 
+;   rax = 0 если не нашли, 
+;   иначе rax = address
 find_word: 
     xor rax, rax
 .loop:

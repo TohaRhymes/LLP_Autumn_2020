@@ -1,5 +1,6 @@
 section .data
 	buf : times 256 db 0
+    str: db 10, 0
 
 section .text
 
@@ -17,6 +18,7 @@ global parse_uint
 global parse_int
 global string_copy
 global print_error
+global print_new_line
  
 ; ++ Принимает код возврата и завершает текущий процесс
 exit: 
@@ -272,6 +274,11 @@ print_error:
     syscall
     ret
 
+
+print_new_line:
+    mov rdi, str
+    call print_string
+    ret
 
 
 

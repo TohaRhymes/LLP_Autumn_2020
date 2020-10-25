@@ -1,8 +1,9 @@
-colon "one", hey
-db "12345",0
 
-colon "test", test
-db "t_rhymes", 0
+colon "Toha", toha
+db "Anton Changalidi", 0
 
-colon "usr", tost
-db "usr", 0
+colon "Hello", hello
+db "Hello, world", 0
+
+colon "Hey", hey
+db "HEY, fella!", 0

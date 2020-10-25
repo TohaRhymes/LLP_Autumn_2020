@@ -8,11 +8,12 @@ extern print_string
 extern print_error
 extern string_length
 extern exit
+extern print_new_line
 
 global _start
 
-section .rodata
-msg_keyError: db "KeyError",0
+section .data
+msg_keyError: db "KeyError", 0
 
 
 %include "words.inc"
@@ -29,7 +30,6 @@ _start:
     call find_word
     test rax, rax
     jz .bad
-
     add rax, 8
     push rax
     mov rax, [rsp]
@@ -39,18 +39,25 @@ _start:
     add rdi, rax
     inc rdi
     call print_string
+    call print_new_line
+    call print_new_line
     mov rsp, rbp
     pop rbp
     mov rdi, 0
-    call exit 
+    jmp _start
+    ; call exit 
 
 .bad:
     mov rdi, msg_keyError
     call print_error
-
+    call print_new_line
+    call print_new_line
     mov rsp, rbp
     pop rbp
     mov rdi, 0
-    call exit
+    jmp _start
+    ; call exit
+
+
 
 

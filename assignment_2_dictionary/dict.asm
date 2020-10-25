@@ -1,7 +1,6 @@
 global find_word
 extern string_equals
 
-section .rodata
 
 section .text
 ; rdi = адрес слова
